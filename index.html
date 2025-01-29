@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multi Calculator</h1>
+        <select id="calculatorSelect">
+          <option value="select">Select</option>
+            <option value="normal">Normal Calculator</option>
+            <option value="loan">Indian Loan Calculator</option>
+            <option value="bmi">BMI Calculator</option>
+     
+        </select>
+
+        <!-- Normal Calculator -->
+        <div id="normalCalculator" class="calculator">
+            <h2>Normal Calculator</h2>
+            <input type="text" id="normalInput" disabled>
+            <div class="buttons">
+                <button onclick="clearNormal()" class="operator">C</button>
+                <button onclick="deleteLast()" class="operator">DEL</button>
+                <button onclick="appendNormal('/')" class="operator">/</button>
+                <button onclick="appendNormal('*')" class="operator">*</button>
+                <button onclick="appendNormal('7')">7</button>
+                <button onclick="appendNormal('8')">8</button>
+                <button onclick="appendNormal('9')">9</button>
+                <button onclick="appendNormal('-')" class="operator">-</button>
+                <button onclick="appendNormal('4')">4</button>
+                <button onclick="appendNormal('5')">5</button>
+                <button onclick="appendNormal('6')">6</button>
+                <button onclick="appendNormal('+')" class="operator">+</button>
+                <button onclick="appendNormal('1')">1</button>
+                <button onclick="appendNormal('2')">2</button>
+                <button onclick="appendNormal('3')">3</button>
+                <button onclick="appendNormal('+')" class="operator">.</button>
+                <button onclick="appendNormal('0')" class="zero">0</button>
+                <button onclick="calculateNormal()" class="equal">=</button>
+               
+   
+            </div>
+        </div>
+
+        <!-- Indian Loan Calculator -->
+        <div id="loanCalculator" class="calculator" style="display: none;">
+            <h2>Indian Loan Calculator</h2>
+            <label for="loanAmount">Loan Amount (₹):</label>
+            <input type="number" id="loanAmount" placeholder="Enter loan amount">
+            <label for="interestRate">Interest Rate (%):</label>
+            <input type="number" id="interestRate" placeholder="Enter interest rate">
+            <label for="loanTenure">Loan Tenure (Years):</label>
+            <input type="number" id="loanTenure" placeholder="Enter tenure in years">
+            <button onclick="calculateLoan()">Calculate</button>
+            <p id="loanResult"></p>
+        </div>
+
+        <!-- BMI Calculator -->
+        <div id="bmiCalculator" class="calculator" style="display: none;">
+            <h2>BMI Calculator</h2>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter weight in kg">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="Enter height in cm">
+            <button onclick="calculateBMI()">Calculate</button>
+            <p id="bmiResult"></p>
+        </div>
+
+        <!-- Currency Converter -->
+        <div id="currencyConverter" class="calculator" style="display: none;">
+            <h2>Currency Converter</h2>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount">
+            <label for="fromCurrency">From:</label>
+            <select id="fromCurrency">
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+                <option value="EUR">EUR</option>
+            </select>
+            <label for="toCurrency">To:</label>
+            <select id="toCurrency">
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+                <option value="EUR">EUR</option>
+            </select>
+            <button onclick="convertCurrency()">Convert</button>
+            <p id="currencyResult"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
